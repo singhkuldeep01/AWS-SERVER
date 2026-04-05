@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import ip from 'ip';
+// import ip from 'ip';
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/ping' , (req, res)=>{
     res.json({
-        ip: ip.address(),
+        // ip: ip.address(),
         message: "pong",
         timestamp: new Date().toISOString()
     });   
