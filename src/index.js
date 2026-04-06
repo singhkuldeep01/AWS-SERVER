@@ -12,6 +12,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/ping' , (req, res)=>{
+
+    for(let i = 0 ; i < 1000000000 ; i++){
+        // Simulate a delay
+    }
+
     res.json({
         ip: ip.address(),
         message: "pong",
