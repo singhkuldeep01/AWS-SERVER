@@ -13,6 +13,19 @@ app.get('/', (req, res) => {
 
 app.get('/ping' , (req, res)=>{
 
+    // for(let i = 0 ; i < 1000000000 ; i++){
+    //     // Simulate a delay
+    // }
+
+    res.json({
+        ip: ip.address(),
+        message: "pong",
+        timestamp: new Date().toISOString()
+    });   
+})
+
+app.get('/delay' , (req, res)=>{
+
     for(let i = 0 ; i < 1000000000 ; i++){
         // Simulate a delay
     }
@@ -23,6 +36,8 @@ app.get('/ping' , (req, res)=>{
         timestamp: new Date().toISOString()
     });   
 })
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
